@@ -18,14 +18,25 @@ const Country = (props) => {
 
   return (
     <div className="col">
-      <div class="card">
+      <div className="card">
         <img src={setImage} className="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            This is a longer card with supporting text below as a natural
-            lead-in to additional content. This content is a little bit longer.
-          </p>
+        <div className="card-body">
+          <h5>
+            Name:{" "}
+            <span className="card-title">{props.country.name.common}</span>
+          </h5>
+          <h5>
+            Continents:{" "}
+            <span className="card-title">{props.country.continents[0]}</span>
+          </h5>
+          <h5>
+            Region: <span className="card-title">{props.country.region}</span>
+          </h5>
+          <h5>
+            Population:{" "}
+            <span className="card-title">{props.country.population}</span>
+          </h5>
+          <button className="btn-favourite">Favourite</button>
         </div>
       </div>
     </div>

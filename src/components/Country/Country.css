@@ -4,7 +4,29 @@
 }
 
 .col {
-    border: 1px solid grey;
-    padding: 10px;
-    border-radius: 5px;
+  border: 1px solid grey;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.card-title {
+  color: #38cc77;
+}
+
+.card-body > h5 {
+  margin-bottom: 5px;
+}
+
+.btn-favourite {
+  padding: 8px 10px;
+  background-color: #5a20cb;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  margin-top: 8px;
+}
+
+.btn-favourite:hover {
+  background-color: #6529dd;
+  cursor: pointer;
 }
