@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import "react-bootstrap";
 import "./Header.css";
 
 const Header = () => {
@@ -15,10 +15,10 @@ const Header = () => {
         <input className="input-field" type="text" placeholder="Search" />
       </div>
       <div className="cart-container">
-          <span>0</span> item(s) - <span>0</span>TK
-          <div className="added-cart-items">
-            <p>Cart</p>
-          </div>
+        <span>0</span> item(s)
+        <div className="added-cart-items">
+          <p>Cart</p>
+        </div>
       </div>
     </div>
   );
