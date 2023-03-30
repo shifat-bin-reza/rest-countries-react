@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Cart from "../Cart/Cart";
 import Country from "../Country/Country";
-import { addFavouriteCountries } from "../utilities/Database";
+import { addFavouriteCountries, removeFromDb } from "../utilities/Database";
 import "./Countries.css";
 
 const Countries = () => {

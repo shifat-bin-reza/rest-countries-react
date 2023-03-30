@@ -2,7 +2,9 @@ const addFavouriteCountries = (getCountry) => {
   let favouriteCountry = [];
   const getStorage = JSON.parse(localStorage.getItem("favourite-country"));
   if (getStorage) {
-    const isAddedPrevious = getStorage.find((country) => country.name == getCountry.name);
+    const isAddedPrevious = getStorage.find(
+      (country) => country.name == getCountry.name
+    );
     if (isAddedPrevious) {
       alert("This country already added in your favourite list");
     } else {
@@ -18,11 +20,10 @@ const addFavouriteCountries = (getCountry) => {
   }
 };
 
-// const removeFromDb = (name) => {
-//   console.log(name);
-//   const getCart = JSON.parse(localStorage.getItem("favourite-country"));
-//   const afterRemove = getCart.find((country) => country.name !== name);
-//   localStorage.setItem("favourite-country", JSON.stringify(afterRemove));
-// };
+const removeFromDb = (name) => {
+  const storedCart = JSON.parse(localStorage.getItem("favourite-country"));
+  const remainCart = storedCart.filter((item) => item.name !== name);
+  localStorage.setItem("favourite-country", JSON.stringify(remainCart));
+};
 
-export { addFavouriteCountries };
+export { addFavouriteCountries, removeFromDb };
