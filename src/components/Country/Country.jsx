@@ -1,5 +1,6 @@
 import React from "react";
 import BlankImage from "../../assets/blank.png";
+import { addFavouriteCountries } from "../utilities/Database";
 import "./Country.css";
 
 const Country = (props) => {
@@ -7,6 +8,9 @@ const Country = (props) => {
   function isImageEmpty(obj) {
     return Object.keys(obj).length == 0;
   }
+
+  const handleCart = props.addToCart;
+  // console.log(handleCart);
 
   const image = isImageEmpty(props.country.coatOfArms);
   let setImage;
@@ -36,7 +40,12 @@ const Country = (props) => {
             Population:{" "}
             <span className="card-title">{props.country.population}</span>
           </h5>
-          <button className="btn-favourite">Favourite</button>
+          <button
+            onClick={() => handleCart(props.country)}
+            className="btn-favourite"
+          >
+            Favourite
+          </button>
         </div>
       </div>
     </div>

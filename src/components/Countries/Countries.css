@@ -1,6 +1,27 @@
 .country-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
   padding: 20px 30px;
+}
+
+.body-container {
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+
+.cart-container {
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 5px 20px;
+  color: black;
+  text-align: center;
+  position: relative;
+  border: 1px solid grey;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.added-cart-items {
+  width: 100%;
 }

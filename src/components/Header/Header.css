@@ -3,7 +3,7 @@
   color: #ffffff;
   padding: 30px 25px;
   display: grid;
-  grid-template-columns: 20% 30% 40% ;
+  grid-template-columns: 50% 50%;
   gap: 40px;
 }
 
@@ -13,33 +13,13 @@
   gap: 10px;
 }
 
+.search-container {
+  margin-right: 30px;
+}
+
 .input-field {
-  width: 400px;
+  width: 100%;
   padding: 10px 20px;
   border-radius: 5px;
   outline: none;
-}
-
-.cart-container {
-  background-color: #ffffff;
-  border-radius: 5px;
-  padding: 5px 20px;
-  color: black;
-  text-align: center;
-  position: relative;
-}
-
-.added-cart-items {
-  background-color: #ffffff;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50px;
-  display: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-}
-
-.cart-container:hover .added-cart-items {
-    display: block;
 }
