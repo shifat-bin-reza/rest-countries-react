@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Cart from "../Cart/Cart";
 import Country from "../Country/Country";
+import { addFavouriteCountries } from "../utilities/Database";
 import "./Countries.css";
 
-const Countries = (props) => {
+const Countries = () => {
   const [countries, setCountries] = useState([]);
   useEffect(() => {
     fetch("https://restcountries.com/v3.1/all")
@@ -13,11 +14,26 @@ const Countries = (props) => {
 
   const [cart, setCart] = useState([]);
 
-  // let setFlag, setName, setRegion;
-  const addToCart = (country) => {
-    let newCart = [...cart, country];
+  const addToCart = (flag, name, region) => {
+    let setCartToList = {
+      flag,
+      name,
+      region,
+    };
+    let newCart = [...cart, setCartToList];
     setCart(newCart);
+    addFavouriteCountries(setCartToList);
   };
+
+  const [cartList, setCartList] = useState([]);
+  useEffect(() => {
+    const getLocalStorageItem = JSON.parse(
+      localStorage.getItem("favourite-country")
+    );
+    if (getLocalStorageItem) {
+      setCartList(getLocalStorageItem);
+    }
+  }, [cart]);
 
   return (
     <div className="row row-cols-1 row-cols-md-3 g-4 body-container">
@@ -31,10 +47,10 @@ const Countries = (props) => {
         ))}
       </div>
       <div className="cart-container">
-        <span>0</span> item(s)
+        <span>{cart.length}</span> item(s)
         <div className="added-cart-items">
-          {cart.map((singleCart) => (
-            <Cart key={singleCart.cca2} singleCart={singleCart}></Cart>
+          {cartList.map((list) => (
+            <Cart key={list.name} list={list}></Cart>
           ))}
         </div>
       </div>
